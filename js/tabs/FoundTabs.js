@@ -44,6 +44,9 @@ class FoundTab extends Component {
   }
   listShow() {
     let data = this.state.data
+    if(!data) {
+        return <Text>暂无数据</Text>
+    }
     const list = data.map((item,index) => {
       return <Message onPress={()=>{this.openDetail(item)}} key={index} data={item} />
     })
